@@ -95,7 +95,7 @@ function ujKutya() {
   const ADAT = $("input");
   console.log("Vauka");
 
-  kutya.Kép = "kutya6.jpg";
+  kutya.Kép = "kutya8.jpg";
 
   const NevInputElem = $("#kneve");
   kutya.Név = NevInputElem.val();
