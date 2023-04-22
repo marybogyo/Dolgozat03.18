@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="admin.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>BratisMarianna</title>
+  </head>
+  <body>
+    <main>
+      <nav>
+       
+      </nav>
+      <article>
+        <section class="kartyak"></section>
+        <section class="tablazat"></section>
+      </article>
+      <aside>
+        <form action="javascript:void(0)">
+          <fieldset>
+            <legend>Új Kutya</legend>
+            <div>
+              <label for="kneve">Kutya Neve:</label>
+              <input
+                type="text"
+                id="kneve"
+                name="kneve"
+                required
+                pattern="^[A-Z][a-zA-Z] {2,}$"
+              />
+            </div>
+            <div>
+              <label for="kkor">Kutya kora:</label>
+              <input
+                type="number"
+                id="kkor"
+                name="kkor"
+                min="0"
+                max="22"
+                value="4"
+              />
+            </div>
+            <div>
+              <label for="kfajta">Kutya fajtája:</label>
+              <input type="text" id="kfajta" name="kfajta" />
+            </div>
+            <div>
+              <label for="klaba">Kutya Lábainak száma:</label>
+              <input
+                type="number"
+                min="0"
+                max="6"
+                value="4"
+                id="klaba"
+                name="klaba"
+              /><br /><br />
+            </div>
+
+            <fieldset>
+              <legend>Kutya neme:</legend>
+              <input type="radio" id="szuka" name="nem" value="szuka" checked />
+              <label for="szuka">Szuka</label>
+
+              <input type="radio" id="kan" name="nem" value="kan" />
+              <label for="kan">Kan</label><br />
+            </fieldset>
+            <label for="mmag">Kutya marmagasság:</label>
+            <input
+              type="number"
+              id="mmag"
+              name="mmag"
+              min="10"
+              max="160"
+              value="50"
+            /><span>cm</span><br /><br />
+            <input type="button" value="Rögzítés" id="rogzites" /><br />
+          </fieldset>
+        </form>
+      </aside>
+    </main>
+  </body>
+</html>

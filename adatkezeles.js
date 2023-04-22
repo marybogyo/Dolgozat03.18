@@ -1,5 +1,5 @@
 
-export function osszeallit(lista) {
+export function divBerak(lista) {
   let txt = "";
   txt += `<div class="container">`;
   for (let index = 0; index < lista.length; index++) {
@@ -11,14 +11,18 @@ export function osszeallit(lista) {
       const ertek = Object.entries(lista[index])[i][1];
       txt += `<p>${kulcs}: ${ertek}</p>`;
     }
+    txt+=`<button>Mutat</button>`
+    txt+=`<button id="kosarba">Kosárba</button>`
     txt += `</div>`;
   }
+  
   txt += `</div>`;
+
   return txt;
 }
   
 
-export function osszeallit2(lista) {
+export function tablabaRak(lista) {
     let txt2 = "";
     txt2 += `<div class = "container">`;
     txt2 += `<table>`;

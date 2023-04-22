@@ -60,7 +60,7 @@ export const KUTYALISTA = [
   },
 ];
 
-export const KUTYAKULCS = {
+export const kulcs = {
   Név: "Név",
   Kor: "Kor",
   Fajta: "Fajta",
