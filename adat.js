@@ -7,7 +7,6 @@ export const KUTYALISTA = [
     Láb: 4,
     Nem: "kan",
     Magasság: 35,
-    
   },
   {
     Kép: "kutya2.jpg",

@@ -14,7 +14,7 @@
     margin-bottom: 80px;
 }
 
-table, tr, td{
+table, tr, td, th{
     border: 1px black solid;
     padding: 15px;
     border-collapse: collapse;
@@ -107,9 +107,12 @@ div.kartya button{
     margin: 5px;
     width: 40%;
     height: 30px;
+    background-color: rgb(243, 220, 171);
 }
 
 td button{
     width: 100%;
 }
-
+footer{
+    padding: 20px;
+}
