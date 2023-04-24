@@ -116,3 +116,7 @@ td button{
 footer{
     padding: 20px;
 }
+
+#profil > div {
+    display: inline-block;
+}

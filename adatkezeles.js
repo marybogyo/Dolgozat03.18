@@ -1,7 +1,7 @@
 
 export function divBerak(lista) {
   let txt = "";
-  txt += `<div id="profil"></div>`
+  txt += `<div id="profil" ><div><button><</button></div><div>kártya</div><div><button>></button></div></div>` //hidden=hidden
   txt += `<div class="container">`;
   for (let index = 0; index < lista.length; index++) {
     txt += `<div class="kartya">`;
