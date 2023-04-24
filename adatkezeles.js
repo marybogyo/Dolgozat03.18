@@ -1,17 +1,14 @@
 
 export function divBerak(lista) {
   let txt = "";
-  txt += `<div id="profil" ><div><button><</button></div><div>kártya</div><div><button>></button></div></div>` //hidden=hidden
+  txt += `<div id="profil" hidden='hidden'><div><button id="elozoProfil"><</button></div><div id="profilkartya" class="kartya">kártya</div><div><button id="kovetkezoProfil">></button></div></div>` //hidden=hidden
   txt += `<div class="container">`;
   for (let index = 0; index < lista.length; index++) {
     txt += `<div class="kartya">`;
     txt += `<h3>Kutya adatai</h3>`;
     txt += `<img src='${Object.entries(lista[index])[0][1]}'/>`
-    for (let i = 1; i < Object.entries(lista[index]).length; i++) {
-      const kulcs = Object.entries(lista[index])[i][0];
-      const ertek = Object.entries(lista[index])[i][1];
-      txt += `<p>${kulcs}: ${ertek}</p>`;
-    }
+    txt += `<p>${Object.entries(lista[index])[1][0]}: ${Object.entries(lista[index])[1][1]}</p>`;
+   
     txt+=`<button class="mutat">Mutat</button>`
     txt+=`<button class="kosarba">Kosárba</button>`
     txt += `</div>`;
