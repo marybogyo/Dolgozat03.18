@@ -8,6 +8,7 @@ let ARTICLE;
 let kartyak;
 let tablazat;
 let kosarKutyak = [];
+let profilIndex = 0;
 
 $(async function () {
   console.log("ez van");
@@ -26,6 +27,7 @@ $(async function () {
   //tablazat.html(tablabaRak(KUTYALISTA));
 
   kosarbaTesz();
+  mutatraNyom();
 });
 
 function megjelenit(data) {
@@ -121,16 +123,49 @@ function kosarbaTesz() {
 }
 
 function mutatraNyom() {
+  $("#elozoProfil").on("click", function(){
+    profilIndex-=1;
+    if (profilIndex < 0) {
+      profilIndex = KUTYALISTA.length - 1;
+    }
+    kutyaProfilbaRak(profilIndex);
+  })
+
+  $("#kovetkezoProfil").on("click", function(){
+    profilIndex+=1;
+    if (profilIndex >= KUTYALISTA.length) {
+      profilIndex = 0;
+    }
+    kutyaProfilbaRak(profilIndex);
+  })
+
   let mutatlista = $(".mutat");
   for (let index = 0; index < mutatlista.length; index++) {
     mutatlista[index].addEventListener("click", function () {
-      if (!$("#profil").is(":hidden")) {
+      if ($("#profil").is(":hidden")) {
         $("#profil").removeAttr("hidden");
       }
-      $("#profil").html("");
+      kutyaProfilbaRak(index);
     });
 
   }
+}
+
+function kutyaProfilbaRak(index)
+{
+  profilIndex = index;
+  let profilkartya = $("#profilkartya").html("");
+  profilkartya.append(`<img src='${Object.entries(KUTYALISTA[index])[0][1]}'/>`)
+  for (let i = 1; i < Object.entries(KUTYALISTA[index]).length; i++) {
+    const kulcs = Object.entries(KUTYALISTA[index])[i][0];
+    const ertek = Object.entries(KUTYALISTA[index])[i][1];
+    profilkartya.append(`<p>${kulcs}: ${ertek}</p>`);
+  }
+  let bezarButton = $("<button>").text("Bezárás");
+  bezarButton.on("click", function() {
+    $("#profil").attr("hidden", true);
+  })
+  profilkartya.append(bezarButton);
 }
 
 // function torlesGomb() {
